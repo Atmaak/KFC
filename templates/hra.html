@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>War - Card Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #result {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        #btnPlay, #btnReset {
+            padding: 10px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        #playerNames {
+            display: block;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>War - Card Game</h1>
+    
+    <div id="playerNames">
+        <label for="player1Name">Player 1 Name:</label>
+        <input type="text" id="player1Name" placeholder="Enter name for Player 1">
+
+        <label for="player2Name">Player 2 Name:</label>
+        <input type="text" id="player2Name" placeholder="Enter name for Player 2">
+    </div>
+
+    <div id="result"></div>
+    <button id="btnPlay" onclick="playRound()">Play Next Round</button>
+    <button id="btnReset" onclick="resetGame()">Reset Game</button>
+
+    <script>
+        const suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
+        const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+
+        const deck = [];
+        let rounds = 0;
+        let player1Score = 0;
+        let player2Score = 0;
+
+        let player1Name = '';
+        let player2Name = '';
+
+        function initializeDeck() {
+            for (const suit of suits) {
+                for (const rank of ranks) {
+                    deck.push({ rank, suit });
+                }
+            }
+        }
+
+        function shuffleDeck() {
+            for (let i = deck.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [deck[i], deck[j]] = [deck[j], deck[i]];
+            }
+        }
+
+        function dealHands() {
+            const player1Hand = deck.slice(0, deck.length / 2);
+            const player2Hand = deck.slice(deck.length / 2);
+            return { player1Hand, player2Hand };
+        }
+
+        function playRound() {
+            if (rounds === 0) {
+                initializeDeck();
+                shuffleDeck();
+                getPlayerNames();
+                hidePlayerNames();
+            }
+
+            const { player1Hand, player2Hand } = dealHands();
+
+            let result = '';
+
+            const card1 = player1Hand[rounds];
+            const card2 = player2Hand[rounds];
+
+            result += `Round ${rounds + 1}: ${player1Name}'s ${getCardString(card1)} vs ${player2Name}'s ${getCardString(card2)}<br>`;
+
+            const resultText = determineRoundWinner(card1, card2);
+            result += `Winner: ${resultText}<br>`;
+            
+            updateScores(resultText);
+            
+            result += `Score: ${player1Name} - ${player1Score}, ${player2Name} - ${player2Score}<br><br>`;
+
+            rounds++;
+
+            if (rounds === ranks.length) {
+                const winner = determineGameWinner(player1Score, player2Score);
+                result += `Game Over! ${winner} wins the war!<br>`;
+                document.getElementById('btnPlay').disabled = true;
+            }
+
+            document.getElementById('result').innerHTML = result;
+        }
+
+        function updateScores(resultText) {
+            if (resultText === player1Name) {
+                player1Score++;
+            } else if (resultText === player2Name) {
+                player2Score++;
+            }
+        }
+
+        function getCardString(card) {
+            return `${card.rank} of ${card.suit}`;
+        }
+
+        function determineRoundWinner(card1, card2) {
+            const value1 = ranks.indexOf(card1.rank);
+            const value2 = ranks.indexOf(card2.rank);
+
+            if (value1 > value2) {
+                return player1Name;
+            } else if (value1 < value2) {
+                return player2Name;
+            } else {
+                return 'Draw';
+            }
+        }
+
+        function determineGameWinner(player1Score, player2Score) {
+            return player1Score > player2Score ? player1Name : player2Name;
+        }
+
+        function resetGame() {
+            rounds = 0;
+            player1Score = 0;
+            player2Score = 0;
+            showPlayerNames();
+            document.getElementById('btnPlay').disabled = false;
+            document.getElementById('result').innerHTML = '';
+        }
+
+        function getPlayerNames() {
+            player1Name = document.getElementById('player1Name').value || 'Player 1';
+            player2Name = document.getElementById('player2Name').value || 'Player 2';
+        }
+
+        function hidePlayerNames() {
+            document.getElementById('playerNames').style.display = 'none';
+        }
+
+        function showPlayerNames() {
+            document.getElementById('playerNames').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
