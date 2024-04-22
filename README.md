@@ -1,4 +1,4 @@
-Vlastní projekt na téma webové stránky pro KFC
+Webové stránky pro KFC
 Repozitář GitHub
 Vytvořte na GitHubu repozitář k projektu.
 
