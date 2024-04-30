@@ -8,9 +8,9 @@ Souborová a adresářová struktura projektu bude organizována následovně:
 
 - `index.php`: Hlavní vstupní bod webové stránky.
 - `assets/`: Adresář obsahující veškerá statická aktiva, jako jsou obrázky, styly a soubory JavaScript.
-  - `css/`: Adresář pro CSS soubory.
-  - `js/`: Adresář pro JavaScriptové soubory.
-  - `img/`: Adresář pro obrázky.
+- `css/`: Adresář pro CSS soubory.
+- `js/`: Adresář pro JavaScriptové soubory.
+- `img/`: Adresář pro obrázky.
 - `includes/`: Adresář pro PHP soubory k vložení.
 
 ## Funkce a vlastnosti
