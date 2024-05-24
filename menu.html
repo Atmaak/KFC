@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kentucky Fried Chicken</title>
+  <link rel="stylesheet" href="stylemenu.css">
+  <link rel="icon" type="image/x-icon" href="img/logosakos.ico">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Kentucky Fried Chicken</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="history.html">History</a></li>
+          <li><a href="restaurants.html">Restaurants</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h2> Meals of the KFC Menu</h2>
+        <p>Discover your favorite from the many options of all KFC meals.</p>
+        <a href="#features" class="btn" onclick="scrollToSection('features')">Explore Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="eminem">
+    <br id="features">
+    <div class="grid-container">
+      <div class="person">
+        <img src="img/bsmartos.png" alt="Bsmart">
+        <div class="details">
+          <h3>B-Smarts</h3>
+          <p>Deliciously ingenious menu addition, offering customers the best of both worlds: mouthwatering taste and healthier options, making it a satisfying choice for any appetite.</p>
+        </div>
+      </div>
+      <div class="person">
+        <img src="img/menicko.png" alt="Menu">
+        <div class="details">
+          <h3>Menu</h3>
+          <p>KFC's extensive menu boasts a tantalizing array of both timeless classics and innovative new offerings, meticulously crafted to cater to diverse tastes and cravings, ensuring that every visit is a flavorful adventure waiting to be savored.</p>
+        </div>
+      </div>
+      <div class="person">
+        <img src="img/boxando.png" alt="Box">
+        <div class="details">
+          <h3>Boxes</h3>
+          <p>KFC's meal boxes are a convenient and satisfying solution, combining an enticing variety of their signature items into one delicious package, making them the perfect choice for any occasion or craving.</p>
+        </div>
+      </div>
+      <div class="person">
+        <img src="img/kyblos.png" alt="Buckets">
+        <div class="details">
+          <h3>Buckets</h3>
+          <p>KFC's iconic buckets are a feast for the senses, brimming with an abundance of their renowned chicken, sides, and sauces, making them the ultimate choice for sharing with friends and family or indulging in a hearty meal solo.</p>
+        </div>
+      </div>
+    </div>
+    <div class="grid-container">
+      <div class="person">
+        <img src="img/wrapandos.png" alt="Wraps">
+        <div class="details">
+          <h3>Wraps</h3>
+          <p>KFC's wraps are a flavorful fusion of fresh ingredients and bold flavors, carefully wrapped in a soft tortilla for a handheld delight that's perfect for on-the-go enjoyment, offering a deliciously convenient option for those seeking a satisfying meal without compromising on taste.</p>
+        </div>
+      </div>
+      <div class="person">
+        <img src="img/ryzandos.png" alt="Rice Menu">
+        <div class="details">
+          <h3>Rice Menu</h3>
+          <p>KFC's rice menu offers a delectable selection of hearty meals, featuring perfectly cooked rice paired with savory toppings and mouthwatering sauces, providing a deliciously comforting option for those craving a satisfying and filling meal.</p>
+        </div>
+      </div>
+      <div class="person">
+        <img src="img/cateringos.png" alt="Catering">
+        <div class="details">
+          <h3>Catering</h3>
+          <p>KFC's catering service brings the irresistible flavors of their famous chicken and sides to any event or gathering, offering customizable options to suit any size or occasion, ensuring that every guest enjoys a memorable dining experience filled with finger-licking goodness.</p>
+        </div>
+      </div>
+      <div class="person">
+        <img src="img/snidanos.png" alt="Breakfast">
+        <div class="details">
+          <h3>Breakfast</h3>
+          <p>
+            KFC's breakfast menu is a delightful way to start the day, featuring a tempting array of hearty options such as chicken and waffles, breakfast sandwiches, and flavorful sides, providing a deliciously satisfying morning meal that's sure to fuel your day ahead with a taste of Kentucky goodness.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Kentucky Fried Chicken. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>

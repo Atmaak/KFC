@@ -1,0 +1,114 @@
+/* styles.css */
+
+/* Reset styles */
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/Roboto-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* Global styles */
+    body {
+      font-family: Roboto;
+      line-height: 2.18;
+      background: linear-gradient(black,rgba(20,20,20,0.2)),url("img/pozadi2.jpg") center/cover no-repeat fixed;
+    }
+    
+    .container {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0px 20px;
+    }
+    
+    header {
+      background-color:transparent;
+      color: #fff;
+      padding: 20px 0;
+      position: relative;
+      width: 100%;
+      z-index: 1000;
+    }
+  
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px; 
+    }
+    
+    header h1 {
+      font-size: 3em; 
+      margin-left: 0; 
+    }
+  
+    nav ul {
+    list-style-type: none;
+    margin: 0; 
+  }
+    
+    nav ul li {
+    display: inline;
+    margin-right: 10px; 
+  }
+  
+    nav ul li:last-child {
+    margin-right: 0; 
+  }
+  
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.5em;
+      position: relative; 
+      transition: all 0.3s ease; 
+    }
+  
+    nav ul li a:hover {
+      text-decoration: none;
+    }
+  
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -3px; 
+      width: 0%; 
+      height: 2px; 
+      background-color: #8d342e;
+      transition: all 0.3s ease; 
+    }
+  
+    nav ul li a:hover::after {
+      width: 100%; 
+    }
+
+    .eminem {
+      padding: 50px 0 50px;
+      background-color: #121212;
+      color: white;
+    }
+
+    footer {
+      background-color: rgba(19, 18, 18, 0.85);
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+    
+    .mapa {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin-bottom: 50px;
+    }
+
+    
