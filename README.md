@@ -6,12 +6,9 @@ Tento projekt má za cíl vytvořit webovou stránku pro KFC pomocí různých w
 ## Struktura projektu
 Souborová a adresářová struktura projektu bude organizována následovně:
 
-- `index.php`: Hlavní vstupní bod webové stránky.
-- `assets/`: Adresář obsahující veškerá statická aktiva, jako jsou obrázky, styly a soubory JavaScript.
-- `css/`: Adresář pro CSS soubory.
-- `js/`: Adresář pro JavaScriptové soubory.
+- `index.html`: Hlavní vstupní bod webové stránky.
+- `fonts/`: Adresář obsahující font.
 - `img/`: Adresář pro obrázky.
-- `includes/`: Adresář pro PHP soubory k vložení.
 
 ## Funkce a vlastnosti
 - Domovská stránka: Zobrazuje informace o KFC a aktuální nabídky.
