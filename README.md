@@ -1,5 +1,7 @@
 # Projekt webové stránky KFC
 
+[Navštiv stránky KFC](https://kfc.jednoduse.cz/).
+
 ## Popis
 Tento projekt má za cíl vytvořit webovou stránku pro KFC pomocí různých webových technologií, jako jsou HTML, CSS, PHP a JavaScript. Webová stránka bude sloužit jako online platforma pro zákazníky, kde si mohou prohlédnout nabídku KFC, najít poblíž umístěné pobočky a potenciálně provádět objednávky.
 
